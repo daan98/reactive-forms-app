@@ -9,7 +9,6 @@ export class EmailVlidatorService implements AsyncValidator {
         const email = control.value;
         
         const httpCallObservable = new Observable<ValidationErrors | null>((subscriber) => {
-            console.log({ email });
 
             if (email === 'daniel@gmail.com') {
                 subscriber.next({ emailTaken: true });
@@ -28,7 +27,6 @@ export class EmailVlidatorService implements AsyncValidator {
 
     /* validate(control: AbstractControl) : Observable<ValidationErrors | null> {
         const email = control.value;
-        console.log({ email });
 
         return of({
             emailTaken: true,
@@ -41,7 +39,6 @@ export class EmailVlidatorService implements AsyncValidator {
 
 /* validate(control: AbstractControl) : Observable<ValidationErrors | null> {
         const email = control.value;
-        console.log({ email });
 
         return this.http.get<any[]>(`http://localhost:3000/users?q=${email}`)
             .pipe(

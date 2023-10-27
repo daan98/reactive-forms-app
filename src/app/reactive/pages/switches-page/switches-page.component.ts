@@ -34,8 +34,6 @@ export class SwitchesPageComponent {
     const { termConditions, ...newPerson } = this.myForm.value;
 
     this.person = newPerson;
-    console.log('handleOnSubmit: ', this.myForm);
-    console.log('person: ', this.person);
   }
 
   public isValidField(field : string) : boolean | null {

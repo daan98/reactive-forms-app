@@ -55,9 +55,6 @@ export class BasicPageComponent implements OnInit {
   }
 
   public handleOnSubmit() : void {
-    console.log('price errors: ', this.myForm.controls['price'].errors);
-    console.log('name errors: ', this.myForm.controls['name'].errors);
-    console.log('inStorage errors: ', this.myForm.controls['inStorage'].errors);
     if (this.myForm.invalid) {
       this.myForm.markAllAsTouched();
       return

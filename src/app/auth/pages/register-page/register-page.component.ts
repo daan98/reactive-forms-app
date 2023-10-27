@@ -16,6 +16,8 @@ export class RegisterPageComponent {
     username: ['', [Validators.required, this.validatorService.cantBeStrider]],
     password: ['', [Validators.required, Validators.minLength(8)]],
     password2: ['', [Validators.required]],
+  }, {
+    validators: [this.validatorService.areFieldsEquals('password', 'password2')]
   });
 
   constructor(
@@ -28,8 +30,6 @@ export class RegisterPageComponent {
     if (this.myForm.invalid) {
       return this.myForm.markAllAsTouched();
     }
-
-    console.log('handleOnSubmit: ', this.myForm);
   }
 
   public isValidField(field : string) : boolean | null {
